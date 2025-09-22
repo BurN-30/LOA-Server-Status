@@ -1,6 +1,7 @@
 # Lost Ark Server Status Bot
 
-A bot to monitor the server status for the game Lost Ark and send notifications via Discord.
+Just sharing a bot to monitor the server status for the game Lost Ark and send notifications via Discord.
+It was originally for personal use while servers are in Maintenance to know when they are back online without checking manually the website.
 
 ## Features
 
@@ -9,7 +10,6 @@ A bot to monitor the server status for the game Lost Ark and send notifications 
 * Advanced state machine logic to prevent false notifications from rapid status flickers.
 * Graphical User Interface (GUI) to manage Discord webhooks.
 * System tray icon for background operation.
-
 
 ## Preview
 
@@ -25,49 +25,56 @@ Here is what the application and its notifications look like:
 
 ## Installation
 
-1.  **Clone the repository:**
+1. **Clone the repository:**
+
     ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-    cd YOUR_REPO
+    git clone https://github.com/BurN-30/LOA-Server-Status.git
+    cd LOA-Server-Status
     ```
 
-2.  **Create a virtual environment (recommended):**
+2. **Create a virtual environment (recommended):**
+
     ```bash
     python -m venv venv
     ```
 
-3.  **Activate the virtual environment:**
-    *   **On Windows:**
+3. **Activate the virtual environment:**
+    * **On Windows:**
+
         ```bash
         .\venv\Scripts\activate
         ```
-    *   **On macOS/Linux:**
+
+    * **On macOS/Linux:**
+
         ```bash
         source venv/bin/activate
         ```
 
-4.  **Install the dependencies:**
+4. **Install the dependencies:**
+
     ```bash
     pip install -r requirements.txt
     ```
 
 ## Usage
 
-1.  **Configure your Discord webhook:**
-    *   Open the `config.json` file.
-    *   Replace `"https://discord.com/api/webhooks/CHANGE_THIS_URL"` with your own Discord webhook URL.
+1. **Configure your Discord webhook:**
+    * Open the `config.json` file.
+    * Replace `"https://discord.com/api/webhooks/CHANGE_THIS_URL"` with your own Discord webhook URL.
 
+2. **Choose your server**
+    * Open the `LOA_Server_Status.py` file with a text editor.
+    * Find the `SERVER_NAME` variable near the top of the file.
+    * Change `"Ratik"` to the name of the server you want to monitor (e.g., `"Azena"`, `"Kadan"`, etc.).
 
- 2. Choose your server
-    *   Open the `LOA_Server_Status.py` file with a text editor.
-    *   Find the `SERVER_NAME` variable near the top of the file.
-    *   Change `"Ratik"` to the name of the server you want to monitor (e.g., `"Azena"`, `"Kadan"`, etc.).
-        ```python
-        SERVER_NAME = "Azena" # Change this to your server name
+    ```python
+    SERVER_NAME = "Azena" # Change this to your server name
         ```
-    *   Save the file.
+    * Save the file.
 
-2.  **Run the script:**
+3. **Run the script:**
+
     ```bash
     python LOA_Server_Status.py
     ```
@@ -76,28 +83,27 @@ Here is what the application and its notifications look like:
 
 To create a standalone `.exe` file, you can use PyInstaller.
 
-1.  **Install PyInstaller:**
+1. **Install PyInstaller:**
+
     ```bash
     pip install pyinstaller
     ```
 
-2.  **Create the executable:**
+2. **Create the executable:**
+
     ```bash
     pyinstaller --onefile --windowed --icon=icon.ico LOA_Server_Status.py
     ```
-    *   `--onefile`: Bundles everything into a single executable file.
-    *   `--windowed`: Prevents the console window from appearing when the app runs.
-    *   `--icon=icon.ico`: (Optional) Sets a custom icon for your executable. Make sure you have an `icon.ico` file in the same directory.
+
+    * `--onefile`: Bundles everything into a single executable file.
+    * `--windowed`: Prevents the console window from appearing when the app runs.
+    * `--icon=icon.ico`: (Optional) Sets a custom icon for your executable. Make sure you have an `icon.ico` file in the same directory.
 
     The executable will be located in the `dist` folder.
 
 ## Important Files
 
-*   `LOA_Server_Status.py`: The main bot script.
-*   `config.json`: Configuration file for webhook URLs.
-*   `requirements.txt`: A list of the required Python dependencies.
-*   `icon.png`: The icon used for the system tray.
-
-## Contributing
-
-Contributions are welcome! Please open an issue to discuss any changes you would like to make.
+* `LOA_Server_Status.py`: The main bot script.
+* `config.json`: Configuration file for webhook URLs.
+* `requirements.txt`: A list of the required Python dependencies.
+* `icon.png`: The icon used for the system tray.
