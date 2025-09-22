@@ -4,11 +4,11 @@ A bot to monitor the server status for the game Lost Ark and send notifications 
 
 ## Features
 
-*   Real-time monitoring of server status (Online, Busy, Full, Maintenance).
-*   Discord notifications with custom messages and images for each status.
-*   Advanced state machine logic to prevent false notifications from rapid status flickers.
-*   Graphical User Interface (GUI) to manage Discord webhooks.
-*   System tray icon for background operation.
+* Real-time monitoring of server status (Online, Busy, Full, Maintenance).
+* Discord notifications with custom messages and images for each status.
+* Advanced state machine logic to prevent false notifications from rapid status flickers.
+* Graphical User Interface (GUI) to manage Discord webhooks.
+* System tray icon for background operation.
 
 
 ## Preview
@@ -56,6 +56,16 @@ Here is what the application and its notifications look like:
 1.  **Configure your Discord webhook:**
     *   Open the `config.json` file.
     *   Replace `"https://discord.com/api/webhooks/CHANGE_THIS_URL"` with your own Discord webhook URL.
+
+
+ 2. Choose your server
+    *   Open the `LOA_Server_Status.py` file with a text editor.
+    *   Find the `SERVER_NAME` variable near the top of the file.
+    *   Change `"Ratik"` to the name of the server you want to monitor (e.g., `"Azena"`, `"Kadan"`, etc.).
+        ```python
+        SERVER_NAME = "Azena" # Change this to your server name
+        ```
+    *   Save the file.
 
 2.  **Run the script:**
     ```bash
