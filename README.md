@@ -59,25 +59,25 @@ Here is what the application and its notifications look like:
 
 ## Usage
 
-1. **Configure your Discord webhook:**
+1. **Configure the application:**
     * Open the `config.json` file.
-    * Replace `"https://discord.com/api/webhooks/CHANGE_THIS_URL"` with your own Discord webhook URL.
+    * Replace the placeholder URL inside `"webhook_urls"` with your own Discord webhook URL. You can add multiple URLs if you want to send notifications to several channels.
+    * Change the `"server_name"` value from `"Ratik"` to the server you want to monitor (e.g., `"Azena"`, `"Kadan"`, etc.).
 
-2. **Choose your server**
-    * Open the `LOA_Server_Status.py` file with a text editor.
-    * Find the `SERVER_NAME` variable near the top of the file.
-    * Change `"Ratik"` to the name of the server you want to monitor (e.g., `"Azena"`, `"Kadan"`, etc.).
-
-    ```python
-    SERVER_NAME = "Azena" # Change this to your server name
+    Here is an example of a configured `config.json` file:
+        ```json
+    {
+        "webhook_urls": [
+            "https://discord.com/api/webhooks/1234567890/ABCDEFG..."
+        ],
+        "server_name": "Azena"
+    }
         ```
-    * Save the file.
 
-3. **Run the script:**
-
-    ```bash
+2. **Run the script:**
+        ```bash
     python LOA_Server_Status.py
-    ```
+        ```
 
 ## Creating an Executable
 

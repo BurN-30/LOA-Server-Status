@@ -22,7 +22,6 @@ from email.utils import parsedate_to_datetime
 
 # --- CONFIGURATION (Most settings are now in config.json) ---
 CONFIG_FILE = "config.json"
-SERVER_NAME = "Ratik"  # Change this to your server name
 STATUS_URL = "https://www.playlostark.com/en-us/support/server-status"
 CHECK_INTERVAL_SECONDS = 5
 STATUS_CONFIG = {
@@ -41,7 +40,11 @@ def load_config():
         with open(CONFIG_FILE, 'r') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        default_config = {"webhook_urls": ["https://discord.com/api/webhooks/CHANGE_THIS_URL"]}
+        # Create default config if not found or invalid
+        default_config = {
+            "webhook_urls": ["https://discord.com/api/webhooks/CHANGE_THIS_URL"],
+            "server_name": "Ratik" # Change this to your server name
+        }
         save_config(default_config)
         return default_config
 
@@ -228,8 +231,13 @@ class QueueWriter:
     def flush(self): pass
 
 if __name__ == '__main__':
+    # Load configuration and set SERVER_NAME
+    config = load_config()
+    SERVER_NAME = config.get("server_name", "Ratik") # Default to "Ratik" if not set
+    print(f"Configured to monitor server: {SERVER_NAME}")
+
     log_queue = queue.Queue()
     sys.stdout = QueueWriter(log_queue)
     root = tk.Tk()
-    app = App(root, log_queue)
+    app = App(root, log_queue) 
     root.mainloop()
