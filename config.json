@@ -1,0 +1,5 @@
+{
+    "webhook_urls": [
+        "https://discord.com/api/webhooks/CHANGE_THIS_URL"
+    ]
+}

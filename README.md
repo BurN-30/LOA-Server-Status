@@ -10,6 +10,17 @@ A bot to monitor the server status for the game Lost Ark and send notifications 
 *   Graphical User Interface (GUI) to manage Discord webhooks.
 *   System tray icon for background operation.
 
+
+## Preview
+
+Here is what the application and its notifications look like:
+
+**Application GUI:**
+![Application GUI](./screenshots/gui_screenshot.png)
+
+**Discord Notifications:**
+![Discord Notifications](./screenshots/discord_notifications.png)
+
 ## Installation
 
 1.  **Clone the repository:**
