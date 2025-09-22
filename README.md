@@ -16,9 +16,11 @@ A bot to monitor the server status for the game Lost Ark and send notifications 
 Here is what the application and its notifications look like:
 
 **Application GUI:**
+
 ![Application GUI](./screenshots/gui_screenshot.png)
 
 **Discord Notifications:**
+
 ![Discord Notifications](./screenshots/discord_notifications.png)
 
 ## Installation
